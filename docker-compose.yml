@@ -1,0 +1,9 @@
+version: "3.6"
+
+services:
+  mysql:
+    container_name: milan
+    image: liulirun/milan-img:latest
+    volumes:
+      - ./app:/home
+    command: bash -c "cp /run.py /home/ && cd /home && python run.py && tail -f /dev/null"
